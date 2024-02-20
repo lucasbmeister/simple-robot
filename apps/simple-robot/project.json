@@ -1,0 +1,24 @@
+{
+  "name": "simple-robot",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/simple-robot/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "simple-robot:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "simple-robot:build:development"
+        },
+        "production": {
+          "buildTarget": "simple-robot:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
