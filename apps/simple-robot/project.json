@@ -18,6 +18,27 @@
           "buildTarget": "simple-robot:build:production"
         }
       }
+    },
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/simple-robot",
+        "main": "apps/simple-robot/src/main.ts",
+        "tsConfig": "apps/simple-robot/tsconfig.app.json",
+        "assets": ["apps/simple-robot/src/assets"],
+        "webpackConfig": "apps/simple-robot/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false
+        },
+        "development": {}
+      }
     }
   },
   "tags": []
